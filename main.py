@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score,mean_squared_error,mean_absolute_error
 import mlflow.sklearn
 from mlflow.models.signature import infer_signature
+import pickle
 
 
 data=pd.read_csv("data/processed_dataset.csv")
@@ -28,6 +29,10 @@ with mlflow.start_run(run_name="Test2"):
     input_example=x_test.iloc[:2]
     signature=infer_signature(x_test,y_pred)
     mlflow.sklearn.log_model(sk_model=LR,name="Linear Regression model",input_example=input_example,signature=signature)
+
+with open('model/model.pkl','wb') as f:
+    pickle.dump(LR,f)
+    print("_________Model Successfully Saved________")
 
 print("Mean absolute error =",mae)
 print("Mean Squared error =",mse)
