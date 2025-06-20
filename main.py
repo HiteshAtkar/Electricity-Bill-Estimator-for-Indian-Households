@@ -31,7 +31,7 @@ with mlflow.start_run(run_name="Test2"):
     signature=infer_signature(x_test,y_pred)
     mlflow.sklearn.log_model(sk_model=LR,name="Linear Regression model",input_example=input_example,signature=signature)
 
-os.mkdirs("model",exist_ok=True)
+os.makedirs("model", exist_ok=True)
 with open('model/model.pkl','wb') as f:
     pickle.dump(LR,f)
     print("_________Model Successfully Saved________")

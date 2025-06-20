@@ -27,3 +27,9 @@ jobs:
             - name: Run Model Script
               run: |
                 python main.py
+            
+            - name: Upload Model Artifact
+              uses: actions/upload-artifact@v4
+              with:
+                name: Model pkl
+                path: model/model.pkl
