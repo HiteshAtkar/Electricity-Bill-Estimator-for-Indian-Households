@@ -17,7 +17,7 @@ jobs:
       
        - name: Install dependacies
          run: | 
-           python pip -m install --upgrade pip
+           python -m pip install --upgrade pip
            pip install -r requirement.txt
 
        - name: Run model
