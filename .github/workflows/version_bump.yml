@@ -57,6 +57,3 @@ jobs:
           asset_path: version.txt
           asset_name: version.txt
           asset_content_type: text/plain
-
-      - name: Debug upload URL (optional)
-        run: echo "Upload URL: ${{ steps.create_release.outputs.upload_url }}"
