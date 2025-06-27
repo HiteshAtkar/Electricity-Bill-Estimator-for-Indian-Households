@@ -1,4 +1,4 @@
- name: Create model on commit
+name: Create model on commit
 on:
   push:
     branches: [main]
@@ -28,4 +28,4 @@ jobs:
          uses: actions/upload-artifact@v4
            with:
              name: Model
-             path:model/model.pkl
+             path: model/model.pkl
