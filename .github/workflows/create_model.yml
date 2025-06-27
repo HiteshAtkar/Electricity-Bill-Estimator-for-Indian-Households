@@ -26,6 +26,6 @@ jobs:
 
        - name: Update artifacts
          uses: actions/upload-artifact@v4
-           with:
-             name: Model
-             path: model/model.pkl
+         with:
+           name: Model
+           path: model/model.pkl
