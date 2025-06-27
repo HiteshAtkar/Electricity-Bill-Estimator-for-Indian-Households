@@ -22,6 +22,9 @@ jobs:
       - name: Bump Version
         id: bump
         run: |
+          if [ ! -f version.txt ]; then
+            echo "1" > version.txt
+          fi
           version=$(cat version.txt)
           new_version=$((version + 1))
           echo $new_version > version.txt
